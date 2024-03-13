@@ -1,0 +1,44 @@
+/* this controls the whole aesthetic stuff */
+body {
+  background-image: url("[paste the url of an image you want as the background here or change the css to 'background-image:' and the color you want]");
+  font-family: arial, monospace;
+  color: black; /* text color, not background color */
+}
+
+.containing-box-of-ultimate-destiny {
+  background-color: lightseagreen; /* feel free to change this */
+  border-style: ridge;   /* and this */
+  border-width: 5px; /* and this */
+  border-color: darkcyan; /* and this */
+}
+/* add styling! subtract styling! the web is yours! */
+* {
+  box-sizing: border-box;
+}
+.flex-container {
+  display: flex;    /* i wouldnt reccomend changing this on the actual webpage if you dont know what youre doing (it can break the layout entirely)*/
+  flex-direction: row; /* mess around with it in inspect if you want to experiment! */
+  text-align: center;
+}
+
+.flex-item-left {
+  flex: 50%;
+  padding: 5px;
+  max-width: 955px;
+}
+
+.flex-item-right {
+  flex: 50%;
+  padding: 5px;
+  max-width: 315px;
+}
+@media (max-width: 800px) { /* makes the mobile layout */
+  .flex-container {
+    flex-direction: column-reverse; 
+  }
+  .flex-item-right {
+    max-width: 645px;
+  }
+  .flex-item-left {
+    max-width: 645px;
+  }}
