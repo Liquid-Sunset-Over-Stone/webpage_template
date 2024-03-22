@@ -1,0 +1,267 @@
+<doctype!html>
+  <html><head>
+  <title>webpage template</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/98.css">
+  <script>function makeDark() {
+  var scuglat = document.getElementById("epic_gamer_moment");
+  scuglat.classList.toggle("accessib");
+  var neil_cicierega = document.getElementById("crt_effect");
+  neil_cicierega.classList.toggle("scanoff");
+}
+</script>
+</head>
+
+<body id="epic_gamer_moment">
+  <style>body {
+  background: url("https://media1.tenor.com/m/-usuBYt1mNAAAAAd/retrowave-grid.gif")
+    repeat-x center;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: arial, monospace;
+  color: black;
+}
+@keyframes flicker {
+  0% {
+    opacity: 0.27861;
+  }
+  5% {
+    opacity: 0.34769;
+  }
+  10% {
+    opacity: 0.23604;
+  }
+  15% {
+    opacity: 0.90626;
+  }
+  20% {
+    opacity: 0.18128;
+  }
+  25% {
+    opacity: 0.83891;
+  }
+  30% {
+    opacity: 0.65583;
+  }
+  35% {
+    opacity: 0.67807;
+  }
+  40% {
+    opacity: 0.26559;
+  }
+  45% {
+    opacity: 0.84693;
+  }
+  50% {
+    opacity: 0.96019;
+  }
+  55% {
+    opacity: 0.08594;
+  }
+  60% {
+    opacity: 0.20313;
+  }
+  65% {
+    opacity: 0.71988;
+  }
+  70% {
+    opacity: 0.53455;
+  }
+  75% {
+    opacity: 0.37288;
+  }
+  80% {
+    opacity: 0.71428;
+  }
+  85% {
+    opacity: 0.70419;
+  }
+  90% {
+    opacity: 0.7003;
+  }
+  95% {
+    opacity: 0.36108;
+  }
+  100% {
+    opacity: 0.24387;
+  }
+}
+@keyframes access {
+  from {
+    background-image: url("https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-attachment: scroll;
+    background-image-repeat: repeat;
+    background-size: 64px 64px;
+  }
+  to {
+    background-image: url("https://images.pexels.com/photos/998641/pexels-photo-998641.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-attachment: scroll;
+    background-image-repeat: repeat;
+    background-size: 64px 64px;
+  }
+}
+p {
+  font-weight: bold;
+}
+.crt::after {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(18, 16, 16, 0.1);
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+  animation: flicker 0.15s infinite;
+}
+.crt::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+    linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 0.06),
+      rgba(0, 255, 0, 0.02),
+      rgba(0, 0, 255, 0.06)
+    );
+  z-index: -1;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+}
+.scanoff {
+  animation: stopper 10s infinite;
+  animation-play-state: paused;
+}
+.scanoff::after {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(18, 16, 16, 0.1);
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+  animation-play-state: paused;
+}
+.scanoff::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+    linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 0.06),
+      rgba(0, 255, 0, 0.02),
+      rgba(0, 0, 255, 0.06)
+    );
+  opacity: 0;
+  z-index: -1;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+}
+.accessib {
+  animation-name: access;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  background-repeat: repeat;
+  background-attachment: scroll;
+}
+.containing-box-of-ultimate-destiny {
+  background-color: violet;
+  box-shadow: rgb(0, 255, 255) 2px 2px 2px, rgb(255, 0, 255) -2px -2px 2px;
+  padding: 2px;
+  font-family: "Pixelated MS Sans Serif", Arial;
+}
+* {
+  box-sizing: border-box;
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.flex-item-left {
+  flex: 50%;
+  padding: 5px;
+  max-width: 315px;
+}
+.flex-item-center {
+  flex: 50%;
+  padding: 5px;
+  max-width: 640;
+}
+.flex-item-right {
+  flex: 50%;
+  padding: 5px;
+  max-width: 315px;
+}
+</style>
+  <div class="crt" id="crt_effect">
+    <center>
+      <h1 style="font-size:3rem; font-family: 'Pixelated MS Sans Serif',Arial; color: white; text-shadow: 2px 0 1px rgba(0,255,255,0.5), -2px 0 1px rgba(255,0,255,0.5), 0 0 3px; padding:3px;">placeholder header</h1>
+    </center>
+    <div class="flex-container">
+      <div class="flex-item-left">
+        <div class="window" style="background-color:violet; box-shadow: inset -1px -1px #9d159d, inset 1px 1px #fce9fc, inset -2px -2px #e74be7, inset 2px 2px #f3a5f3;">
+          <div class="title-bar">
+            <div class="title-bar-text">left sidebar</div>
+
+          </div>
+          <div class="window-body">
+            <p>place some content here
+            <p>(maybe a comment section or something)</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex-item-center" style="overflow:hidden;">
+        <div class="containing-box-of-ultimate-destiny">
+          <p>place your main content here<br>(maybe a bio, some images, or videos)</p><br><br><button onclick="makeDark()" type="button" style="background-color:violet; box-shadow: inset -1px -1px #9d159d, inset 1px 1px #fce9fc, inset -2px -2px #e74be7, inset 2px 2px #f3a5f3;">toggle background</button><br><br><b>some stuff you can use:</b><br>
+          <ul>
+            <li><a href="https://www.w3schools.com/html/default.asp">tutorial resource</a></li><br>
+            <li><a href="https://pexels.com">free image website for your backgrounds</a></li><br>
+            <li>
+              <a href="https://github.com">a place to upload and host your website from for free</a>
+            </li>
+            <a href="https://codepen.io/lbebber/pen/XJRdrV/">the crt effect</a>
+            <br>
+            <br><br>
+            <a href="https://github.com/jdan/98.css">the css framework i used as the base for this</a>
+            <br>
+            <p>you can find all other credits in the code btw</p>
+          </ul>
+          <p>this template was made by <a href="https://www.youtube.com/@probably_creek">creekcat</a> but you can remove this bottom credits thing if you want to</p>
+        </div>
+
+      </div>
+      <div class="flex-item-right" style="overflow:hidden;">
+        <div class="window" style="background-color:violet; box-shadow: inset -1px -1px #9d159d, inset 1px 1px #fce9fc, inset -2px -2px #e74be7, inset 2px 2px #f3a5f3;">
+          <div class="title-bar">
+            <div class="title-bar-text">right sidebar</div>
+          </div>
+          <div class="window-body">
+            <p>place some content here (maybe news or links)</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+</body></html>
