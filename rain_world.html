@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta name="viewport" content="width=device-width, initial-scale=1"></head>
+<body>
+<style>
+@font-face {
+  font-family: "Rodondo", "mainMenu";
+  src: url("https://fontsforyou.com/fonts/r/Rodondo.otf");
+}
+@font-face {
+  font-family: "Segoe UI";
+  font-weight: 600;
+  src: local("Segoe UI Semibold");
+}
+@keyframes metal {
+  0% {
+    background-clip: text;
+    background-position-x: 0px;
+    background-image: linear-gradient(
+      45deg,
+      #999 5%,
+      #fff 10%,
+      #ccc 30%,
+      #ddd 50%,
+      #ccc 70%,
+      #fff 80%,
+      #999 95%
+    );
+    background-size: 25px;
+  }
+  100% {
+    background-clip: text;
+
+    background-position-x: 1000px;
+    background-image: linear-gradient(
+      45deg,
+      #999 5%,
+      #fff 10%,
+      #ccc 30%,
+      #ddd 50%,
+      #ccc 70%,
+      #fff 80%,
+      #999 95%
+    );
+    background-size: 25px;
+  }
+}
+html {
+  min-height: 100%;
+}
+body {
+  min-height: 100%;
+  background: black;
+
+  background-image: linear-gradient(
+      rgba(0, 75, 0, 0.05) 0%,
+      rgba(0, 15, 0, 0.75) 100%
+    ),
+    url("https://images.unsplash.com/photo-1578922427288-a47338083a57?q=80&w=1390&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-attatchment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+* {
+  box-sizing: border-box;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.flex-item-left {
+  flex: 50%;
+  padding: 5px;
+  max-width: 955px;
+}
+
+.flex-item-right {
+  flex: 50%;
+  padding: 5px;
+  max-width: 315px;
+}
+.can {
+  max-width: 1920px;
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  border: white;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 2px;
+  backdrop-filter: blur(1px);
+}
+h1 {
+  font-family: "Rodondo";
+  font-weight: normal;
+  letter-spacing: 1.5px;
+  animation-name: metal;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  color: rgba(0, 0, 0, 0);
+}
+h2 {
+  font-family: "Rodondo";
+  font-weight: normal;
+  letter-spacing: 1.5px;
+  animation-name: metal;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  color: rgba(0, 0, 0, 0);
+}
+h3 {
+  font-family: "Rodondo";
+  font-weight: normal;
+  letter-spacing: 1.5px;
+  animation-name: metal;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  color: rgba(0, 0, 0, 0);
+}
+h4 {
+  font-family: "Rodondo";
+  font-weight: normal;
+  letter-spacing: 1.5px;
+  animation-name: metal;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  color: rgba(0, 0, 0, 0);
+}
+h5 {
+  font-family: "Rodondo";
+  font-weight: normal;
+  letter-spacing: 1.5px;
+  animation-name: metal;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  color: rgba(0, 0, 0, 0);
+}
+p {
+  font-family: "Segoe UI";
+}
+.projection_wrapper {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+}
+/*credit for how i got the octagon going: https://stackoverflow.com/questions/34641588/how-do-i-give-a-css-octagon-shape-a-full-border*/
+.projection {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  transform: rotate(45deg);
+  background: rgba(250, 225, 25, 0.5);
+  border: 2px double rgba(250, 225, 25, 0.75);
+}
+.projection:before {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  bottom: -2px;
+  left: -2px;
+  transform: rotate(45deg);
+  content: "";
+  border: inherit;
+}
+.projected {
+  rotate: -45deg;
+  opacity: 0.5;
+}
+a {
+  font-family: "Segoe UI";
+}
+button {
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  border: white;
+  border-style: solid;
+  border-radius: 10px;
+  border-width: 2px;
+}
+</style>
+  <div class="flex-container">
+    <div class="flex-item-left">
+      <div class="can">
+        <h1>Hello!!</h1>
+        <p>As you can probably tell, I figured out how to replicate the basics of the <span style="font-family: 'Rodondo'; letter-spacing: 1.5px;">rain world</span> aesthetic in the form of a webpage.<br>Although the adrenaline high is yet to be implimented, I hope you can find a way to customize and edit this template to a way that fits your memories of <span style="font-family: 'Rodondo'; letter-spacing: 1.5px;">Rain World</span>.</p>
+      </div>
+      <div class="can">
+        <h2>Credits</h2><a href="https://images.unsplash.com/photo-1578922427288-a47338083a57?q=80&w=1390&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">background image</a><br><a href="https://stackoverflow.com/questions/34641588/how-do-i-give-a-css-octagon-shape-a-full-border">octagonal lifesaver</a><br><a href="https://static.miraheze.org/rainworldwiki/2/28/Slugwalk.gif">slugcat gif</a><br><a href="https://fontsforyou.com/fonts/r/Rodondo.otf">the lovely header font</a><br>
+        <p>Please credit me, <a href="https://liquid-sunset-over-stone.github.io/general_page/">CreekCat</a>, if/when you use this because I would love to be credited for my hard work.</p>
+      </div>
+    </div>
+    <div class="flex-item-right">
+      <div class="can">
+        <h2>What's included</h2>
+        <ul>
+          <li>
+            <p>containers that resemble rain world textboxes</p>
+          </li>
+          <li>
+            <p>buttons!</p>
+          </li>
+          <li>
+            <p>overseer-style projection boxes</p>
+          </li>
+          <li>
+            <p>header font and body font stuffs</p>
+          </li>
+          <li>
+            <p>a cool background</p>
+          </li>
+        </ul>
+      </div><br>
+      <div class="can">
+        <h2>What's yet to come</h2>
+        <li>
+          <p>detail work on the overseer projections, opacity styling, and some other minor stuff</p>
+        </li>
+        <li>
+          <p>stylization of more elements (tables and stuff)</p>
+        </li>
+        <li>
+          <p>fixes of spacing and padding and stuff</p>
+        </li>
+      </div><br>
+      <div class="projection_wrapper">
+        <div class="projection">
+          <p class="projected">:3</p>
+          <img class="projected" src="https://static.miraheze.org/rainworldwiki/2/28/Slugwalk.gif">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body></html>
