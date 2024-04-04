@@ -46,6 +46,17 @@
     background-size: 25px;
   }
 }
+@keyframes buttonhov {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.05);
+  }
+  100%{
+    transfofrm: scale(1);
+  }
+}
 html {
   min-height: 100%;
 }
@@ -153,13 +164,21 @@ button {
   border-radius: 5px;
   border-width: 1px;
   opacity: 0.75;
+  animation-play-state: pause;
+  text-transform: uppercase;
+  font-size: 75%;
+  padding: 5px;
+  padding-left:20px; padding-right: 20px;
 }
 button:hover{
   background: rgba(0, 0, 0);
   border-style: double;
   border-width: 3px;
-  transform: scale(1.1);
   opacity: 1;
+  animation: buttonhov;
+  animation-iteration-count:infinite;
+  animation-play-state: running;
+  animation-duration: 0.5s;
 }
 </style>
   <div class="flex-container">
