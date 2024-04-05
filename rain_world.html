@@ -3,7 +3,22 @@
   <title>Rain World Webpage Template</title>
   <link rel="icon" href="https://static.miraheze.org/rainworldwiki/6/6e/Watcher_head.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="UTF-8"></head>
+<meta charset="UTF-8">
+<script>var rain_button = document.querySelector("button.rain");
+rain_button.addEventListener("mouseover", blink);
+rain_button.addEventListener("mouseout", stopper);
+
+function blink() {
+  button1 = document.getElementById("plinker");
+  // you will need to create a new variable and id for each button if you want it to blink, sorry (-w-||)
+  button1.classList.add("innerblink");
+}
+function stopper() {
+  button1 = document.getElementById("plinker");
+  // you will need to create a new variable and id for each button if you want it to blink, sorry (-w-||)
+  button1.classList.remove("innerblink");
+}
+</script></head>
 <body>
 <style>@font-face {
   font-family: "Rodondo";
@@ -17,22 +32,6 @@
 @keyframes metal {
   0% {
     background-clip: text;
-    background-position-x: 0px;
-    background-image: linear-gradient(
-      45deg,
-      #999 5%,
-      #fff 10%,
-      #ccc 30%,
-      #ddd 50%,
-      #ccc 70%,
-      #fff 80%,
-      #999 95%
-    );
-    background-size: 25px;
-  }
-  100% {
-    background-clip: text;
-
     background-position-x: 1000px;
     background-image: linear-gradient(
       45deg,
@@ -44,18 +43,37 @@
       #fff 80%,
       #999 95%
     );
-    background-size: 25px;
+    background-size: 45px;
+  }
+  100% {
+    background-clip: text;
+
+    background-position-x: 0px;
+    background-image: linear-gradient(
+      45deg,
+      #999 5%,
+      #fff 10%,
+      #ccc 30%,
+      #ddd 50%,
+      #ccc 70%,
+      #fff 80%,
+      #999 95%
+    );
+    background-size: 45px;
   }
 }
-@keyframes buttonhov {
+@keyframes inflash{
   0%{
-    transform: scale(1);
-  }
-  50%{
-    transform: scale(1.05);
+    border: black;
+  border-style: solid;
+  border-radius: 7px;
+    border-width: 2px;
   }
   100%{
-    transfofrm: scale(1);
+    border: white;
+  border-style: solid;
+  border-radius: 7px;
+    border-width: 2px;
   }
 }
 html {
@@ -97,10 +115,12 @@ body {
 }
 .can {
   max-width: 1920px;
+  align-content: center;
   background: rgba(0, 0, 0, 0.95);
   color: white;
   border: white;
   border-style: solid;
+  
   border-radius: 10px;
   border-width: 2px;
   backdrop-filter: blur(1px);
@@ -110,17 +130,17 @@ body {
   padding-bottom: 10px;
 }
 h1, h2, h3, h4, h5 {
-  font-family: "Rodondo";
+  font-family: "Rodondo"; !important
   font-weight: normal;
   letter-spacing: 1.5px;
   animation-name: metal;
   animation-duration: 10s;
+  animation-timing-function: linear;
   animation-iteration-count: infinite;
   color: rgba(0, 0, 0, 0);
 }
 p {
   font-family: "segoe-ui";
-  font-weight: 600;
 }
 .projection_wrapper {
   width: 150px;
@@ -155,33 +175,37 @@ p {
   opacity: 0.5;
 }
 a {
-  font-family: "segoe-ui";
+  font-family: "Segoe UI";
 }
-button {
+button.rain {
   background: rgba(0, 0, 0);
   color: white;
   border: white;
   border-style: solid;
-  border-radius: 5px;
-  border-width: 1px;
+  border-radius: 7px;
+  border-width: 2px;
   opacity: 0.75;
   animation-play-state: pause;
   text-transform: uppercase;
   font-size: 75%;
   padding: 5px;
-  padding-left:20px; padding-right: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
-button:hover{
+button.rain:hover{
   background: rgba(0, 0, 0);
-  border-style: double;
-  border-width: 3px;
+  
   opacity: 1;
-  animation: buttonhov;
-  animation-iteration-count:infinite;
-  animation-play-state: running;
-  animation-duration: 0.5s;
+  border: white;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 7px;
+  padding: 1px;
+  padding-left: 1px;
+  padding-right: 1px;
 }
-  select{
+
+select{
   background-color: black;
   color: white;
   border: white;
@@ -191,65 +215,232 @@ button:hover{
   text-transform: uppercase;
   font-size: 75%;
   padding: 5px;
-  padding-left:20px; padding-right: 20px;
+  padding-left:20px; 
+  padding-right: 20px;
+  align-text: center;
+}
+
+.innerblink{
+  
+  animation: inflash;
+  animation-duration: 0.30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: step(1, 2);
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.check{
+     
+  border: 25px solid;
+  border-image-slice: 50%;
+  border-image-source: url("https://static.miraheze.org/rainworldwiki/a/a0/Collection_iterator_box_%28unselected%29.png");
+  border-image-repeat: stretch;
+  
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+}
+
+#checkboxes input[type=checkbox]{
+    display: none;
+}
+
+#checkboxes input[type=checkbox]:checked + .check{
+ 
+  border: 25px solid;
+    border-image-source: url("https://static.miraheze.org/rainworldwiki/b/bb/Collection_iterator_box_%28selected%29.png");
+  border-image-slice: 50%;
+  border-image-repeat: stretch;
+  background: url("https://static.miraheze.org/rainworldwiki/7/76/Karma_10_icon_%28no_circle%29.png");
+  background-origin: border-box;
+  background-position: center;
+}
+#checkboxes input[type=checkbox]:checked::before + .check::before{
+  
+}
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.radButton {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background: url("https://static.miraheze.org/rainworldwiki/5/52/Food_pip_empty.png");
+  border-radius: 50%;
+}
+
+
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .radButton {
+  background: url("https://static.miraheze.org/rainworldwiki/c/ce/Food_pip_full.png");
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.radButton:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+ 	
+}
+.fancy_header::before{
+  content: url("https://static.miraheze.org/rainworldwiki/9/90/Batfly_icon.png");
+  padding: 5px;
+}
+.fancy_header::after{
+  content: url("https://static.miraheze.org/rainworldwiki/9/90/Batfly_icon.png");
+  padding: 5px;
+    
+}
+li {
+  background: url("https://static.miraheze.org/rainworldwiki/0/09/Pearl_Misc.png") no-repeat left center;
+  list-style: none;
+  padding: 5px 10px 5px 25px;
+  margin: 0;
+  vertical-align: middle;
 }
 </style>
   <div class="flex-container">
     <div class="flex-item-left">
       <div class="can">
-        <h1>Hello!!</h1>
+        <h1 class="fancy_header">Hello!!</h1>
         <p>As you can probably tell, I figured out how to replicate the basics of the <span style="font-family: 'Rodondo'; letter-spacing: 1.5px;">Rain World</span> aesthetic in the form of a webpage.<br>Although the adrenaline high is yet to be implimented, I hope you can find a way to customize and edit this template to a way that fits your memories of <span style="font-family: 'Rodondo'; letter-spacing: 1.5px;">Rain World</span>.</p>
       </div><br>
       <div class="can">
-        <h2>Credits</h2><a href="https://images.unsplash.com/photo-1578922427288-a47338083a57?q=80&w=1390&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">background image</a><br><a href="https://stackoverflow.com/questions/34641588/how-do-i-give-a-css-octagon-shape-a-full-border">octagonal lifesaver</a><br><a href="https://static.miraheze.org/rainworldwiki/2/28/Slugwalk.gif">slugcat gif</a><br><a href="https://fontsforyou.com/fonts/r/Rodondo.otf">the lovely header font</a><br>
+        <h2>Credits</h2><a href="https://images.unsplash.com/photo-1578922427288-a47338083a57?q=80&w=1390&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">background image</a><br><a href="https://stackoverflow.com/questions/34641588/how-do-i-give-a-css-octagon-shape-a-full-border">octagonal lifesaver</a><br><a href="https://rainworld.miraheze.org/wiki/Category:Assets">rain world assets</a><br><a href="https://fontsforyou.com/fonts/r/Rodondo.otf">the lovely header font (this link will download the font)</a><br><a href="https://stackoverflow.com/questions/5523213/create-a-div-that-acts-like-an-html-checkbox">checkbox code i edited</a>
+        <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_radio">radio button code i edited</a>
         <p>Please credit me, <a href="https://liquid-sunset-over-stone.github.io/general_page/">CreekCat</a>, if/when you use this because I would love to be credited for my hard work.</p>
-      </div>
-    </div>
-    <div class="flex-item-right">
-      <div class="can">
-        <h2>What's included</h2>
-        <ul>
-          <li>
-            <p>containers that resemble rain world textboxes</p>
-          </li>
-          <li>
-            <button type="button">buttons!</button>
-          </li>
-          <li>
-            <p>overseer-style projection boxes</p>
-          </li>
-          <li>
-            <p>header font and body font stuffs</p>
-          </li>
-          <li>
-            <p>a cool background</p>
-          </li>
-          <li><select>
-              <option>a dropdown menu thing</option>
-              <option>still a dropdown menu thing</option>
-            </select></li>
-        </ul>
       </div><br>
-      <div class="can">
-        <h2>What's yet to come</h2>
-        <ul>
-        <li>
-          <p>detail work on the overseer projections, opacity styling, and some other minor stuff</p>
-        </li>
-        <li>
-          <p>stylization of more elements (tables and stuff)</p>
-        </li>
-        <li>
-          <p>fixes of spacing and padding and stuff</p>
-        </li>
-        <li><p>the actual making of this into a downloadable css framework</p></li></ul>
-      </div><br>
+      <img src="https://static.miraheze.org/rainworldwiki/9/97/Hoko_scav1.png" alt="scavenger rain world graffiti" style="max-width: 645px;"><br>
+      <img src="https://static.miraheze.org/rainworldwiki/8/89/Lizroll.gif" alt="a cyan lizard from rain world spinning">
       <div class="projection_wrapper">
         <div class="projection">
           <p class="projected">:3</p>
           <img class="projected" src="https://static.miraheze.org/rainworldwiki/2/28/Slugwalk.gif" alt="a slugcat from rain world running and jumping">
         </div>
-      </div>
+      </div><img src="https://static.miraheze.org/rainworldwiki/2/21/Whitecolorchange.gif" alt="a white lizard from rain world changing colors">
+    </div>
+
+    <div class="flex-item-right">
+      <div class="can">
+        <h2>What's included</h2>
+        <ul>
+          <li>
+            <p>custom list stylization</p>
+          </li>
+          <li>
+            <p>containers that resemble rain world textboxes</p>
+          </li>
+
+          <li>
+            <p>overseer-style projection boxes</p>
+          </li>
+
+          <li>
+            <p>header font and body font stuffs</p>
+          </li>
+
+          <li>
+            <p>a cool background</p>
+          </li>
+        </ul>
+        <select title="dropdown menu">
+          <option>a dropdown </option>
+          <option>still a dropdown</option>
+        </select>
+        <br><br>
+        <button type="button" class="rain">
+          <div id="plinker">
+            <span style="padding-left: 20px;
+  padding-right: 20px;
+  ">buttons</span>
+          </div>
+        </button>
+        <br>
+        <p>checkboxes!</p>
+        <div id="checkboxes" style="transform: scale(0.75);">
+          <input type="checkbox" name="rGroup" value="1" id="r1" checked="checked" />
+          <label class="check" for="r1"></label>
+          <input type="checkbox" name="rGroup" value="2" id="r2" />
+          <label class="check" for="r2"></label>
+          <input type="checkbox" name="rGroup" value="3" id="r3" />
+          <label class="check" for="r3"></label><br>
+          <label class="container">really
+            <input type="radio" checked="checked" name="radio">
+            <span class="radButton"></span>
+          </label>
+          <label class="container">cool
+            <input type="radio" name="radio">
+            <span class="radButton"></span>
+          </label>
+          <label class="container">radio
+            <input type="radio" name="radio">
+            <span class="radButton"></span>
+          </label>
+          <label class="container">selectors
+            <input type="radio" name="radio">
+            <span class="radButton"></span>
+          </label>
+        </div>
+
+      </div><br>
+
+      <div class="can">
+        <h2>What's yet to come</h2>
+
+        <ul>
+          <li>
+            <p>detail work on the overseer projections, opacity styling, and some other minor stuff</p>
+          </li>
+
+          <li>
+            <p>stylization of more elements</p>
+          </li>
+
+          <li>
+            <p>fixes of spacing and padding and stuff (so much stuff has to be fixed)</p>
+          </li>
+          <li>
+            <p>complete integration of modes and stuff (for disabled check boxes or whatever)</p>
+          </li>
+
+          <li>
+            <p>the actual making of this into a downloadable css library
+          </li>
+          </p>
+        </ul>
+
+      </div><br>
 
     </div>
   </div>
