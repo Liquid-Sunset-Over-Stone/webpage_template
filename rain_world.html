@@ -4,7 +4,8 @@
   <link rel="icon" href="https://static.miraheze.org/rainworldwiki/6/6e/Watcher_head.png">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
-<script>var rain_button = document.querySelector("button.rain");
+<script>
+  
 
 
 function blink() {
@@ -17,8 +18,12 @@ function stopper() {
   // you will need to create a new variable and id for each button if you want it to blink, sorry (-w-||)
   button1.classList.remove("innerblink");
 }
-  rain_button.addEventListener("mouseover", blink);
+  window.onload=function(){
+    var rain_button = document.querySelector("button.rain");
+    rain_button.addEventListener("mouseover", blink);
 rain_button.addEventListener("mouseout", stopper);
+}
+  
 </script></head>
 <body>
 <style>@font-face {
