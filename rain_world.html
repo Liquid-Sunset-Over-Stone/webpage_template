@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta charset="UTF-8">
 <script>var rain_button = document.querySelector("button.rain");
-rain_button.addEventListener("mouseover", blink);
-rain_button.addEventListener("mouseout", stopper);
+
 
 function blink() {
   button1 = document.getElementById("plinker");
@@ -18,6 +17,8 @@ function stopper() {
   // you will need to create a new variable and id for each button if you want it to blink, sorry (-w-||)
   button1.classList.remove("innerblink");
 }
+  rain_button.addEventListener("mouseover", blink);
+rain_button.addEventListener("mouseout", stopper);
 </script></head>
 <body>
 <style>@font-face {
@@ -380,7 +381,7 @@ li {
         </select>
         <br><br>
         <button type="button" class="rain">
-          <div id="plinker" class="">
+          <div id="plinker">
             <span style="padding-left: 20px;
   padding-right: 20px;
   ">buttons</span>
