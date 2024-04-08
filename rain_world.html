@@ -32,8 +32,13 @@ rain_button.addEventListener("mouseout", stopper);
 }
 @font-face {
   font-family: "rain-world-menu-font-webfont";
-  font-weight: 600;
+  
   src: url("./rain-world-menu-font-webfont.otf");
+}
+  @font-face {
+  font-family: "segoe ui";
+  font-weight: 600;
+  src: url("./segoe-ui.ttf");
 }
 @keyframes metal {
   0% {
@@ -139,7 +144,7 @@ body {
   padding-bottom: 10px;
 }
 h1, h2, h3, h4, h5 {
-  font-family: "Rodondo"; !important
+  font-family: "Rodondo";
   font-weight: normal;
   letter-spacing: 1.5px;
   animation-name: metal;
@@ -149,7 +154,7 @@ h1, h2, h3, h4, h5 {
   color: rgba(0, 0, 0, 0);
 }
 p {
-  font-family: "rain-world-menu-font-webfont";
+  font-family: "rain-world-menu-font-webfont", "segoe ui";
 }
 .projection_wrapper {
   width: 150px;
@@ -185,9 +190,12 @@ p {
   image-rendering: pixilate;
   margin-top: 50px; /*adjust as needed in the individual divs*/
 }
-  /*by the way i have little to no idea what im doing, im a high schooler with a hyperfixation and my code (css is coding) is not the best example of good code and my html is horrid. im trying to make this as accessible and usable as possible but im kinda stupid lol*/
+  /*by the way i have little to no idea what im doing, im a high schooler with a hyperfixation and my code (css is coding, but html isnt. yes i will die on this hill. and javascript obviously is coding.) is not the best example of good code and my html is horrid. im trying to make this as accessible and usable as possible but im kinda stupid lol.
+  i cant wait until i have coworkers that have to deal with my unconventional web development and lack of rememberance of the usages of different thingies.
+  i should not become a teacher.
+  and yes i did remake an entire font out of "why isnt this liscensed for webfont use" spite. the font is a recreation and should be accessible for everyone imo, specially because its basically just pixilated segoe ui*/
 a {
-  font-family: "rain-world-menu-font-webfont";
+  font-family: "rain-world-menu-font-webfont", "segoe ui";
 }
 button.rain {
   background: rgba(0, 0, 0);
