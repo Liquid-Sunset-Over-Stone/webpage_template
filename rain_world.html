@@ -31,9 +31,9 @@ rain_button.addEventListener("mouseout", stopper);
   src: url("./Rodondo.otf");
 }
 @font-face {
-  font-family: "segoe-ui";
+  font-family: "rain-world-menu-font";
   font-weight: 600;
-  src: url("./segoe-ui.ttf");
+  src: url("./rain-world-menu-font-webfont.ttf");
 }
 @keyframes metal {
   0% {
@@ -149,7 +149,7 @@ h1, h2, h3, h4, h5 {
   color: rgba(0, 0, 0, 0);
 }
 p {
-  font-family: "segoe-ui";
+  font-family: "rain-world-menu-font";
 }
 .projection_wrapper {
   width: 150px;
@@ -180,9 +180,12 @@ p {
   border: inherit;
 }
 .projected {
-  rotate: -45deg;
+  scale: 75%;
   opacity: 0.5;
+  image-rendering: pixilate;
+  margin-top: 50px; /*adjust as needed in the individual divs*/
 }
+  /*by the way i have little to no idea what im doing, im a high schooler with a hyperfixation and my code (css is coding) is not the best example of good code and my html is horrid. im trying to make this as accessible and usable as possible but im kinda stupid lol*/
 a {
   font-family: "Segoe UI";
 }
@@ -338,6 +341,48 @@ li {
   margin: 0;
   vertical-align: middle;
 }
+  .crt::after {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  
+  background: rgba(58, 56, 10, 0.1);
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+  animation: flicker 0.15s infinite;
+}
+.crt{
+  transform: rotate(-45deg);
+  background-repeat: repeat;
+  scale: 150%;
+  width: 100%;
+  height: 100%;
+    
+}
+.crt::before {
+  content: " ";
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(58, 56, 10, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+    linear-gradient(
+      90deg,
+      rgba(225, 225, 0, 0.06),
+      rgba(255, 255, 0, 0.02),
+      rgba(255, 205, 155, 0.06)
+    );
+  z-index: -1;
+  background-size: 100% 2px,5px 100%;
+  pointer-events: none;
+}
 </style>
    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="0" height="0">
     <defs>
@@ -354,20 +399,24 @@ li {
     <div class="flex-item-left">
       <div class="can">
         <h1 class="fancy_header">Hello!!</h1>
-        <p>As you can probably tell, I figured out how to replicate the basics of the <span style="font-family: 'Rodondo'; letter-spacing: 1.5px;">Rain World</span> aesthetic in the form of a webpage.<br>Although the adrenaline high is yet to be implimented, I hope you can find a way to customize and edit this template to a way that fits your memories of <span style="font-family: 'Rodondo'; letter-spacing: 1.5px;">Rain World</span>.<br>And yes the font is not pixilated but the pixilated <span style="font-family: 'Rodondo'; letter-spacing: 1.5px;">Rain World</span> UI font I found prohbitted use as a webfont, I will try to find another.</p>
+        <p>As you can probably tell, I figured out how to replicate the basics of the <span style="font-family: 'Rodondo'; letter-spacing: 1.5px;">Rain World</span> aesthetic in the form of a webpage.<br>Although the adrenaline high is yet to be implimented, I hope you can find a way to customize and edit this template to a way that fits your memories of <span style="font-family: 'Rodondo'; letter-spacing: 1.5px;">Rain World</span>.</p>
       </div><br>
       <div class="can">
         <h2>Credits</h2><a href="https://images.unsplash.com/photo-1578922427288-a47338083a57?q=80&w=1390&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">background image</a><br><a href="https://stackoverflow.com/questions/34641588/how-do-i-give-a-css-octagon-shape-a-full-border">octagonal lifesaver</a><br><a href="https://rainworld.miraheze.org/wiki/Category:Assets">rain world assets</a><br><a href="https://fontsforyou.com/fonts/r/Rodondo.otf">the lovely header font (this link will download the font)</a><br><a href="https://stackoverflow.com/questions/5523213/create-a-div-that-acts-like-an-html-checkbox">checkbox code i edited</a>
         <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_radio">radio button code i edited</a><br>
-       <!-- <a href="https://stackoverflow.com/questions/66624701/pixelate-a-whole-webpage/66625778#66625778">the thing i used and tweaked for the slight pixilation</a>-->
+        <!--<a href="https://stackoverflow.com/questions/66624701/pixelate-a-whole-webpage/66625778#66625778">the thing i used and tweaked for the slight pixilation</a>-->
         <p>Please credit me, <a href="https://liquid-sunset-over-stone.github.io/general_page/">CreekCat</a>, if/when you use this because I would love to be credited for my hard work.</p>
       </div><br>
       <img src="https://static.miraheze.org/rainworldwiki/9/97/Hoko_scav1.png" alt="scavenger rain world graffiti" style="max-width: 645px;"><br>
       <img src="https://static.miraheze.org/rainworldwiki/8/89/Lizroll.gif" alt="a cyan lizard from rain world spinning">
       <div class="projection_wrapper">
+
         <div class="projection">
-          <p class="projected">:3</p>
-          <img class="projected" src="https://static.miraheze.org/rainworldwiki/2/28/Slugwalk.gif" alt="a slugcat from rain world running and jumping">
+          <div class="crt">
+            <div class="projected">
+              <img src="https://static.miraheze.org/rainworldwiki/2/28/Slugwalk.gif" alt="a slugcat from rain world running and jumping">
+            </div>
+          </div>
         </div>
       </div><img src="https://static.miraheze.org/rainworldwiki/2/21/Whitecolorchange.gif" alt="a white lizard from rain world changing colors">
     </div>
@@ -440,9 +489,6 @@ li {
         <h2>What's yet to come</h2>
 
         <ul>
-          <li><p>
-            figuring out how to actually pixilate the webpage
-          </p></li>
           <li>
             <p>detail work on the overseer projections, opacity styling, and some other minor stuff</p>
           </li>
