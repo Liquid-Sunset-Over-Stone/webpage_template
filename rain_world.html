@@ -92,8 +92,7 @@ html {
   min-height: 100%;
   filter: url("#pixilate");
 }
-  svg {display: block;
-      }
+  
 body {
   min-height: 100%;
   background: black;
@@ -135,7 +134,7 @@ body {
   color: white;
   border: white;
   border-style: solid;
-  
+  font-weight: 400;
   border-radius: 10px;
   border-width: 2px;
   backdrop-filter: blur(1px);
@@ -393,17 +392,7 @@ li {
   pointer-events: none;
 }
 </style>
-   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="0" height="0">
-    <defs>
-      <filter id="pixelate" x="0" y="0">
-        <feFlood x="2" y="2" height="5" width="5" />
-        <feComposite width="5" height="5" />
-        <feTile result="a" />
-        <feComposite in="SourceGraphic" in2="a" operator="in" />
-        <feMorphology operator="dilate" radius="0.25" />
-      </filter>
-    </defs>
-  </svg>
+   
   <div class="flex-container">
     <div class="flex-item-left">
       <div class="can">
@@ -412,7 +401,8 @@ li {
       </div><br>
       <div class="can">
         <h2>Credits</h2><a href="https://images.unsplash.com/photo-1578922427288-a47338083a57?q=80&w=1390&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">background image</a><br><a href="https://stackoverflow.com/questions/34641588/how-do-i-give-a-css-octagon-shape-a-full-border">octagonal lifesaver</a><br><a href="https://rainworld.miraheze.org/wiki/Category:Assets">rain world assets</a><br><a href="https://fontsforyou.com/fonts/r/Rodondo.otf">the lovely header font (this link will download the font)</a><br><a href="https://stackoverflow.com/questions/5523213/create-a-div-that-acts-like-an-html-checkbox">checkbox code i edited</a>
-        <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_radio">radio button code i edited</a><br>
+       <br> <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_radio">radio button code i edited</a><br>
+<a href="https://fontstruct.com/fontstructions/show/2459136/rain-world-menu-font-webfont">webfont i recreated because licensing on the other recreation (i mean its a recreation so really there shouldnt be restrictive liscensing but i digress)</a><br>
         <!--<a href="https://stackoverflow.com/questions/66624701/pixelate-a-whole-webpage/66625778#66625778">the thing i used and tweaked for the slight pixilation</a>-->
         <p>Please credit me, <a href="https://liquid-sunset-over-stone.github.io/general_page/">CreekCat</a>, if/when you use this because I would love to be credited for my hard work.</p>
       </div><br>
@@ -514,7 +504,7 @@ li {
           </li>
 
           <li>
-            <p>the actual making of this into a downloadable css library
+            <p>the actual making of this into a downloadable package
           </li>
           </p>
         </ul>
