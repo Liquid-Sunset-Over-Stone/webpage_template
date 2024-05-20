@@ -74,19 +74,16 @@ rain_button.addEventListener("mouseout", stopper);
     background-size: 45px;
   }
 }
-@keyframes inflash{
-  0%{
-    border: black;
-  border-style: solid;
-  border-radius: 7px;
-    border-width: 2px;
-  }
-  100%{
-    border: white;
-  border-style: solid;
-  border-radius: 7px;
-    border-width: 2px;
-  }
+@keyframes border-blinker {
+    50% {
+        border-color: rgba(255,255,255,255);
+    }
+}
+
+@keyframes flasher {
+    0% {
+        background-color: #A9A4B2; /* menu lightgray */
+    }
 }
 html {
   min-height: 100%;
@@ -199,35 +196,51 @@ a {
   font-family: "rain-font", "segoe ui";
   font-size: small;
 }
-button.rain {
-  background: rgba(0, 0, 0);
-  color: white;
-  border: white;
-  border-style: solid;
-  border-radius: 7px;
-  border-width: 2px;
-  opacity: 0.75;
-  
-  text-transform: uppercase;
+
+button.rw-ui {
   font-family: "rain-font", "segoe ui";
-  font-size: 55%;
-  padding-top: 7px;
-  padding-bottom: 7px;
-  padding-left: 25px;
-  padding-right: 25px;
+    appearance: none;
+    cursor: pointer;
+    position: relative;
+    border-radius: 8px;
+    border: 2px solid #A9A4B200; /* alpha 0 for fading */
+    box-sizing: border-box; /* correctness */
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    color: #A9A4B2; /* menu lightgray */
+    transition: color 0.3s;
 }
-button.rain:hover{
-  background: rgba(0, 0, 0);
-  
-  opacity: 1;
-  border: white;
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 7px;
-  padding: 2px;
-  padding-left: 2px;
-  padding-right: 2px;
-}
+
+    button.rw-ui:hover {
+        animation: border-blinker 0.8s linear infinite, flasher 0.3s;
+        color: white;
+    }
+
+    button.rw-ui::before { /* outline that expands */
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        margin: -2px; /* undo parent border */
+        border-radius: 8px;
+        border: 2px solid #A9A4B2; /* menu lightgray */
+        transition: padding 0.3s, border-color 0.3s, margin 0.3s;
+    }
+
+    button.rw-ui:hover::before {
+        border-color: white;
+        padding: 4px;
+        margin: -6px;
+    }
+
+    button.rw-ui:active::before {
+        border-color: white;
+        padding: unset;
+        margin: -2px;
+    }
 
 select{
   background-color: black;
@@ -246,16 +259,7 @@ select{
   align-text: center;
 }
 
-.innerblink{
-  
-  animation: inflash;
-  animation-duration: 0.30s;
-  animation-iteration-count: infinite;
-  animation-timing-function: step(1, 2);
-  padding: 5px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
+
 .check{
      
   border: 25px solid;
@@ -412,7 +416,8 @@ li {
         <h2>Credits</h2><a href="https://images.unsplash.com/photo-1578922427288-a47338083a57?q=80&w=1390&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">background image</a><br><a href="https://stackoverflow.com/questions/34641588/how-do-i-give-a-css-octagon-shape-a-full-border">octagonal lifesaver</a><br><a href="https://rainworld.miraheze.org/wiki/Category:Assets">rain world assets</a><br><a href="https://fontsforyou.com/fonts/r/Rodondo.otf">the lovely header font (this link will download the font)</a><br><a href="https://stackoverflow.com/questions/5523213/create-a-div-that-acts-like-an-html-checkbox">checkbox code i edited</a>
        <br> <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_radio">radio button code i edited</a><br>
 <a href="https://fontstruct.com/fontstructions/show/2459136/rain-world-menu-font-webfont">webfont i recreated because licensing on the other recreation (i mean its a recreation so really there shouldnt be restrictive liscensing but i digress)</a><br>
-        <!--<a href="https://stackoverflow.com/questions/66624701/pixelate-a-whole-webpage/66625778#66625778">the thing i used and tweaked for the slight pixilation</a>-->
+   
+        <a href="https://github.com/henpemaz/Rain-World-Interactive-Map/blob/master/docs/rw.css">where i got the the button flash ui</a><br>
         <p>Please credit me, <a href="https://liquid-sunset-over-stone.github.io/general_page/">CreekCat</a>, if/when you use this because I would love to be credited for my hard work.</p>
       </div><br>
       <img src="https://static.miraheze.org/rainworldwiki/9/97/Hoko_scav1.png" alt="scavenger rain world graffiti" style="max-width: 645px;"><br>
@@ -457,12 +462,8 @@ li {
           <option>still a dropdown</option>
         </select>
         <br><br>
-        <button type="button" class="rain">
-          <div id="plinker">
-            <span style="padding-left: 20px;
-  padding-right: 20px;
-  ">buttons</span>
-          </div>
+        <button type="button" class="rw-ui">
+          buttons!
         </button>
         <br>
         <p>checkboxes!</p>
